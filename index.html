@@ -99,12 +99,12 @@
                                 window.waitForVideo();
                             }
                             else if (window.iTracker.VIDEO.currentTime <= 0) {
-                                //document.getElementById("startWebcamManuallyDiv").style.display = "flex";
-                                StartCameraManually()
+                                document.getElementById("startWebcamManuallyDiv").style.display = "flex";
+                                //StartCameraManually()
                             }
                         }, 2500)
                     };
-                    window.waitForVideo();
+                    //window.waitForVideo();
 
                     loadingBar.style.display = "none";
                 });
