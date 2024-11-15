@@ -80,7 +80,7 @@
                     companyName: "DefaultCompany",
                     productName: "ImagineWebAR",
                     productVersion: "0.1",
-                    //webglContextAttributes: { "preserveDrawingBuffer": true },
+                    webglContextAttributes: { "preserveDrawingBuffer": true },
                     // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
                     // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
                     },
@@ -91,7 +91,6 @@
                     window.gameInstance = unityInstance;
                     window.unityInstance = unityInstance;
                     window.iTracker.startWebcam();
-                    window.iTracker.VIDEO.play();
 
                     //[FIX]: some browsers (such as Wechat) does not allow webcam autoplay so we need to start the webcam manually via new button press
                     window.waitForVideo = () => {
