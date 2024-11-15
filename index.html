@@ -70,8 +70,6 @@
                 canvas.style.width = window.innerWidth + "px";
                 canvas.style.height = window.innerHeight + "px";
                 
-                document.getElementById("startWebcamManuallyDiv").style.display = "flex";
-                
                 document.getElementById("startWebcamDiv").style.display = "none";
 
                 createUnityInstance(document.querySelector("#unity-canvas"), {
@@ -101,7 +99,7 @@
                                 window.waitForVideo();
                             }
                             else if (window.iTracker.VIDEO.currentTime <= 0) {
-                                //document.getElementById("startWebcamManuallyDiv").style.display = "flex";
+                                document.getElementById("startWebcamManuallyDiv").style.display = "flex";
                             }
                         }, 2500)
                     };
