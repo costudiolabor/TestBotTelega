@@ -72,8 +72,6 @@
                 
                 document.getElementById("startWebcamDiv").style.display = "none";
 
-                TryStartCamera();
-                
                 createUnityInstance(document.querySelector("#unity-canvas"), {
                     dataUrl: "Build/TestBotTelega.data",
                     frameworkUrl: "Build/TestBotTelega.framework.js",
@@ -92,50 +90,30 @@
                 ).then((unityInstance) => {
                     window.gameInstance = unityInstance;
                     window.unityInstance = unityInstance;
-                    // window.iTracker.startWebcam();
-                    //
-                    // //[FIX]: some browsers (such as Wechat) does not allow webcam autoplay so we need to start the webcam manually via new button press
-                    // window.waitForVideo = () => {
-                    //     setTimeout(() => {
-                    //         if (!window.iTracker.VIDEO) {
-                    //             window.waitForVideo();
-                    //         }
-                    //         else if (window.iTracker.VIDEO.currentTime <= 0) {
-                    //             document.getElementById("startWebcamManuallyDiv").style.display = "flex";
-                    //         }
-                    //     }, 2500)
-                    // };
-                    // window.waitForVideo();
-                    //
-                    // loadingBar.style.display = "none";
+                    window.iTracker.startWebcam();
+
+                    //[FIX]: some browsers (such as Wechat) does not allow webcam autoplay so we need to start the webcam manually via new button press
+                    window.waitForVideo = () => {
+                        setTimeout(() => {
+                            if (!window.iTracker.VIDEO) {
+                                window.waitForVideo();
+                            }
+                            else if (window.iTracker.VIDEO.currentTime <= 0) {
+                                document.getElementById("startWebcamManuallyDiv").style.display = "flex";
+                            }
+                        }, 2500)
+                    };
+                    window.waitForVideo();
+
+                    loadingBar.style.display = "none";
                 });
 
                 loadingBar.style.display = "block";
             }
 
-            
-            function TryStartCamera() {
-                window.iTracker.startWebcam();
-
-                //[FIX]: some browsers (such as Wechat) does not allow webcam autoplay so we need to start the webcam manually via new button press
-                window.waitForVideo = () => {
-                    setTimeout(() => {
-                        if (!window.iTracker.VIDEO) {
-                            window.waitForVideo();
-                        }
-                        else if (window.iTracker.VIDEO.currentTime <= 0) {
-                            document.getElementById("startWebcamManuallyDiv").style.display = "flex";
-                        }
-                    }, 2500)
-                };
-                window.waitForVideo();
-
-                loadingBar.style.display = "none";
-            }
-            
             function StartCameraManually() {
                 document.getElementById("startWebcamManuallyDiv").style.display = "none";
-                iTracker.VIDEO.play();
+                iTracker.VIDEO.play()
             }
 
     </script>
