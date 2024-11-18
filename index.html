@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content='width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes'>
-    <title>Unity WebGL Player | WerAR_3D</title>
+    <title>Unity WebGL Player | ImagineWebAR</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
          html{
@@ -67,6 +67,9 @@
             }
 
             function StartCamera() {
+
+                const videoStream = navigator.mediaDevices.getUserMedia({ video: true });
+                
                 canvas.style.width = window.innerWidth + "px";
                 canvas.style.height = window.innerHeight + "px";
                 
@@ -78,7 +81,7 @@
                     codeUrl: "Build/TestBotTelega.wasm",
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "DefaultCompany",
-                    productName: "WerAR_3D",
+                    productName: "ImagineWebAR",
                     productVersion: "0.1",
                     //webglContextAttributes: { "preserveDrawingBuffer": true },
                     // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
