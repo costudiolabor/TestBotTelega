@@ -67,8 +67,8 @@
             }
 
             function StartCamera() {
-
-                const videoStream = navigator.mediaDevices.getUserMedia({ video: true });
+                window.iTracker.startWebcam();
+                //const videoStream = navigator.mediaDevices.getUserMedia({ video: true });
                 
                 canvas.style.width = window.innerWidth + "px";
                 canvas.style.height = window.innerHeight + "px";
@@ -93,7 +93,7 @@
                 ).then((unityInstance) => {
                     window.gameInstance = unityInstance;
                     window.unityInstance = unityInstance;
-                    window.iTracker.startWebcam();
+                    // window.iTracker.startWebcam();
 
                     //[FIX]: some browsers (such as Wechat) does not allow webcam autoplay so we need to start the webcam manually via new button press
                     window.waitForVideo = () => {
