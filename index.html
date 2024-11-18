@@ -97,16 +97,17 @@
 
                     //[FIX]: some browsers (such as Wechat) does not allow webcam autoplay so we need to start the webcam manually via new button press
                     window.waitForVideo = () => {
-                        setTimeout(() => {
-                            if (!window.iTracker.VIDEO) {
-                                window.waitForVideo();
-                            }
-                            else if (window.iTracker.VIDEO.currentTime <= 0) {
-                                document.getElementById("startWebcamManuallyDiv").style.display = "flex";
-                            }
-                        }, 2500)
+                        // setTimeout(() => {
+                        //     if (!window.iTracker.VIDEO) {
+                        //         window.waitForVideo();
+                        //     }
+                        //     else if (window.iTracker.VIDEO.currentTime <= 0) {
+                        //         document.getElementById("startWebcamManuallyDiv").style.display = "flex";
+                        //     }
+                        // }, 2500)
+                        iTracker.VIDEO.play();
                     };
-                    window.waitForVideo();
+                    //window.waitForVideo();
 
                     loadingBar.style.display = "none";
                 });
