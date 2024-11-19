@@ -67,13 +67,6 @@
             }
 
             function StartCamera() {
-
-                while (window.requestingForPermissions) {
-                    // Wait until requestingForPermissions becomes true.
-                    console.log("Waiting for permissions...");
-                    new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay time as needed.
-                }
-                
                 canvas.style.width = window.innerWidth + "px";
                 canvas.style.height = window.innerHeight + "px";
                 
