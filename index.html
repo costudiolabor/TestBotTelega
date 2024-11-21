@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content='width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes'>
-    <title>Unity WebGL Player | ImagineWebAR</title>
+    <title>Unity WebGL Player | FaceTracking</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
          html{
@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    <script src="Build/TestBotTelega.loader.js"></script>
+    <script src="Build/Web.loader.js"></script>
     <script>
             var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
@@ -73,13 +73,13 @@
                 document.getElementById("startWebcamDiv").style.display = "none";
 
                 createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/TestBotTelega.data.unityweb",
-                    frameworkUrl: "Build/TestBotTelega.framework.js.unityweb",
-                    codeUrl: "Build/TestBotTelega.wasm.unityweb",
+                    dataUrl: "Build/Web.data.unityweb",
+                    frameworkUrl: "Build/Web.framework.js.unityweb",
+                    codeUrl: "Build/Web.wasm.unityweb",
                     streamingAssetsUrl: "StreamingAssets",
-                    companyName: "DefaultCompany",
-                    productName: "ImagineWebAR",
-                    productVersion: "0.1",
+                    companyName: "BlockChainSports",
+                    productName: "FaceTracking",
+                    productVersion: "0.1.0",
                     //webglContextAttributes: { "preserveDrawingBuffer": true },
                     // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
                     // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
@@ -113,7 +113,7 @@
 
             function StartCameraManually() {
                 document.getElementById("startWebcamManuallyDiv").style.display = "none";
-                window.iTracker.VIDEO.play();
+                iTracker.VIDEO.play()
             }
 
     </script>
