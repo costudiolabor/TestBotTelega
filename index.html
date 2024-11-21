@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    <script src="Build/Web.loader.js"></script>
+    <script src="Build/TestBotTelega.loader.js"></script>
     <script>
             var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
@@ -73,9 +73,9 @@
                 document.getElementById("startWebcamDiv").style.display = "none";
 
                 createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/Web.data.unityweb",
-                    frameworkUrl: "Build/Web.framework.js.unityweb",
-                    codeUrl: "Build/Web.wasm.unityweb",
+                    dataUrl: "Build/TestBotTelega.data.unityweb",
+                    frameworkUrl: "Build/TestBotTelega.framework.js.unityweb",
+                    codeUrl: "Build/TestBotTelega.wasm.unityweb",
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "BlockChainSports",
                     productName: "FaceTracking",
