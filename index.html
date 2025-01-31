@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=360 height=640 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -52,14 +52,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Runner.loader.js";
+      var loaderUrl = buildUrl + "/TestBotTelega.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Runner.data.br",
-        frameworkUrl: buildUrl + "/Runner.framework.js.br",
-        codeUrl: buildUrl + "/Runner.wasm.br",
+        dataUrl: buildUrl + "/TestBotTelega.data.br",
+        frameworkUrl: buildUrl + "/TestBotTelega.framework.js.br",
+        codeUrl: buildUrl + "/TestBotTelega.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "Atom",
+        companyName: "DefaultCompany",
         productName: "Runner",
         productVersion: "0.1.0",
         showBanner: unityShowBanner,
@@ -98,8 +98,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "1080px";
-        canvas.style.height = "1920px";
+        canvas.style.width = "360px";
+        canvas.style.height = "640px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
